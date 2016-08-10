@@ -50,7 +50,7 @@ document.write(messageToDisplay);
 can see that the new average function is up and running and has been included in
 the bundle.js file.
 
-![npm init](../../../99 Readme Resources/02 Webpack/Demo00_npminit.png "Demo01_Import.png")
+![npm init](../../99 Readme Resources/02 Webpack/Demo00_npminit.png "Demo01_Import.png")
 
 ## Appendix - Playing with import
 

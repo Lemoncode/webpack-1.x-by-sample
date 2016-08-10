@@ -33,23 +33,23 @@ npm install webpack-dev-server -g
 - Now we can directly execute from the command prompt webpack-dev-server, this
 will launch our web dev server, in this case in port 8080
 
-![localhost](../../../99 Readme Resources/02 Webpack/Demo02_localhost.png "Demo02_localhost.png")
+![localhost](../../99 Readme Resources/02 Webpack/Demo02_localhost.png "Demo02_localhost.png")
 
 
 - If we open a browser we can point the url to http://localhost:8080 and we will browse our web app
 
-![npm init](../../../99 Readme Resources/02 Webpack/Demo03_browser.png "Demo03_browser.png")
+![npm init](../../99 Readme Resources/02 Webpack/Demo03_browser.png "Demo03_browser.png")
 
 
 
 - One interesting feature that ships this dev server is live reloading, if we introduce an update in any of the javascript files it will be automatically detected and  webpack dev server will launch the build process and once finished automatically refresh the page being display in the browser. In order to do thiswe need to call webpack-dev-server with an additional param:
 
-![npm init](../../../99 Readme Resources/02 Webpack/Demo02_inline.png "Demo02_inline.png")
+![npm init](../../99 Readme Resources/02 Webpack/Demo02_inline.png "Demo02_inline.png")
 
 - We don't need to remember this params every time we want to launch our dev
 server,in order to avoid this we can just add an "start" script to our package json
 
-![npm init](../../../99 Readme Resources/02 Webpack/Demo03_Start.png "Demo03_Start.png")
+![npm init](../../99 Readme Resources/02 Webpack/Demo03_Start.png "Demo03_Start.png")
 
 
 - Once we have saved this change we can directly execute from the command prompt

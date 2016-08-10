@@ -113,4 +113,4 @@ module: {
 
 - If we run the app we will see the react based functionallity in action.
 
-![Demo02_01_React.png](../../../99 Readme Resources/02 Webpack/Demo02_01_React.png "Demo02_01_React.png")
+![Demo02_01_React.png](../../99 Readme Resources/02 Webpack/Demo02_01_React.png "Demo02_01_React.png")

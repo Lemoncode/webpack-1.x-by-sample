@@ -28,7 +28,7 @@ Prerequisites, you will need to have nodejs installed in your computer. If you w
 npm install jquery --save
 ````
 
-![package.json](../../../99 Readme Resources/02 Webpack/Demo04PackageJsonJQuery.png "Demo04PackageJsonJQuery.png")
+![package.json](../../99 Readme Resources/02 Webpack/Demo04PackageJsonJQuery.png "Demo04PackageJsonJQuery.png")
 
 - Since this is a legacy library it expects to have a global variable available,
 instead of assigning this manually let's define it in the webpack.config.js. file,
@@ -62,7 +62,7 @@ $('body').css('background-color', 'blue');
 
 - Now we can just execute the app (npm start) and check how the background of the page has changed from white to blue.
 
-![Demo04BlueBackground](../../../99 Readme Resources/02 Webpack/Demo04BlueBackground.png "Demo04BlueBackground.png")
+![Demo04BlueBackground](../../99 Readme Resources/02 Webpack/Demo04BlueBackground.png "Demo04BlueBackground.png")
 
 
 - To finish with this demo, let's face the following case: we want to split the bundle into two, a main one (application level) and a second one that will hold all the third party library, in order to do that we can use the CommonChunkPlugin
@@ -86,7 +86,7 @@ plugins:[
 
 Now if we take a look to the dist folder we can check that the two bundles have been created
 
-![Demo04SnapshotDir](../../../99 Readme Resources/02 Webpack/Demo04SnapshotDir.png "Demo04SnapshotDir.png")
+![Demo04SnapshotDir](../../99 Readme Resources/02 Webpack/Demo04SnapshotDir.png "Demo04SnapshotDir.png")
 
 
 And in the generated index.html (under dist) we can check that both scripts have been successfully referenced:

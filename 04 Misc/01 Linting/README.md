@@ -26,7 +26,7 @@ Let's start by downloading the eslint library via npm, in this case we will exec
 npm install eslint --save-dev
 ```
 
-![package.json installing eslint](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/00 Install eslint.png)
+![package.json installing eslint](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/00 Install eslint.png)
 
 - ESLint works with Babel and JSX syntax by installing plugins. That is, It's a great library to develop React projects. This sample is a demo, so come on to implement a basic configuration.
 We are going to create a file _.eslintrc.json_ (there are many [file formats options](http://eslint.org/docs/user-guide/configuring#configuration-file-formats))
@@ -62,7 +62,7 @@ We are going to create a file _.eslintrc.json_ (there are many [file formats opt
 npm run lint
 ```
 
-![eslint errors](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/01 ESLint errors.png)
+![eslint errors](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/01 ESLint errors.png)
 
 - ESLint throws two parse errors due to use _export_ and _import_ keywords. Import and export functionalities are provided by Babel to work with modules. So it's time to connect ESLint with Babel:
 
@@ -82,7 +82,7 @@ npm install babel-eslint --save-dev
   "parser": "babel-eslint"
 }
 ```
-![result after configuring eslint](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/02 Result after configuring babel-eslint.png)
+![result after configuring eslint](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/02 Result after configuring babel-eslint.png)
 
 - As we see, this time `npm run lint` doesn't throw any errors, it sounds good!. But we want to execute ESLint while we are writing our code. That is, the following step is connect ESLint with Webpack.
 
@@ -92,7 +92,7 @@ npm install babel-eslint --save-dev
 npm install eslint-loader --save-dev
 ```
 
-![package.json installing eslint-loader](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/03 Install eslint-loader.png)
+![package.json installing eslint-loader](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/03 Install eslint-loader.png)
 
 - To configure Webpack, we're going to use preloader definition. We make sure ESLint parse the code before any other process. We get a _webpack.config.js_ like this:
 
@@ -127,7 +127,7 @@ module: {
 ...
 ```
 
-![Webpack build after configure eslint-loader](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/04 Webpack build after configure eslint-loader.png)
+![Webpack build after configure eslint-loader](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/04 Webpack build after configure eslint-loader.png)
 
 - Naked eye, it looks like nothing happens with the build. Let's go to change the code:
 
@@ -156,7 +156,7 @@ const messageToDisplay = `average score ${averageScore}`;
 document.write(message);
 ```
 
-![Typo](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/05 Typo in students.js.png)
+![Typo](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/05 Typo in students.js.png)
 
 # Defining Rules
 
@@ -191,7 +191,7 @@ console.log(messageToDisplay);
 
 - As result, we get this error because the use of _console_ is disallow by default.
 
-![Using console](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/06 Using console log.png)
+![Using console](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/06 Using console log.png)
 
 - We can disable this rule with the following configuration:
 
@@ -210,7 +210,7 @@ console.log(messageToDisplay);
 }
 ```
 
-![Disabling no-console rule](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/07 Disabling no-console rule.png)
+![Disabling no-console rule](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/07 Disabling no-console rule.png)
 
 - Other example is rule named [max-lines](http://eslint.org/docs/rules/max-lines) that it _enforces a maximum number of lines per file, in order to aid in maintainability and reduce complexity._
 
@@ -232,6 +232,6 @@ console.log(messageToDisplay);
 
 _NOTE:_ We can use "error" or 2. But we can read better this line if we use "error" word.
 
-![Using max-lines rule](../../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/08 Using max-lines rule.png)
+![Using max-lines rule](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/08 Using max-lines rule.png)
 
-- To works with React project we can use [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) that provides linting for JSX language.
+- To integrate tslinter with React based project we can use [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) that provides linting for JSX language.

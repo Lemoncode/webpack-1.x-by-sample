@@ -57,4 +57,4 @@ module: {
 
 - If we run our app (npm start), we can check that now we are getting a blue backgrond instead of a red one.
 
-![Demo01_03_SASS.png](../../../99 Readme Resources/02 Webpack/Demo01_03_SASS.png "Demo01_03_SASS.png")
+![Demo01_03_SASS.png](../../99 Readme Resources/02 Webpack/Demo01_03_SASS.png "Demo01_03_SASS.png")

@@ -63,7 +63,7 @@ loaders: [
 
 - Now if run the app (npm start) we can check that the first logo is being shown.
 
-![Demo01_04_app1.png](../../../99 Readme Resources/02 Webpack/Demo01_04_app1.png "Demo01_04_app1.png")
+![Demo01_04_app1.png](../../99 Readme Resources/02 Webpack/Demo01_04_app1.png "Demo01_04_app1.png")
 
 
 
@@ -97,4 +97,4 @@ module: {
 
 - Now if we run the app (npm start) we can see the second logo appearing
 
-![Demo01_04_app2.png](../../../99 Readme Resources/02 Webpack/Demo01_04_app2.png "Demo01_04_app2.png")
+![Demo01_04_app2.png](../../99 Readme Resources/02 Webpack/Demo01_04_app2.png "Demo01_04_app2.png")

@@ -86,13 +86,13 @@ module: {
 - Now we can just execute the app (npm start) and check how the red background is
 being display on the div we have chosen.
 
-![Demo01_00_CSS.png](../../../99 Readme Resources/02 Webpack/Demo01_00_CSS.png "Demo01_00_CSS.png")
+![Demo01_00_CSS.png](../../99 Readme Resources/02 Webpack/Demo01_00_CSS.png "Demo01_00_CSS.png")
 
 - Where did the css go? If we open the developer tools in our browser and hit
 the network tab we can check that there is no CSS file being requested, but if we
 open the main HTML file, we can check how this have been included as a style.
 
-![Demo01_01_Network.png](../../../99 Readme Resources/02 Webpack/Demo01_01_Network.png "Demo01_01_Network.png")
+![Demo01_01_Network.png](../../99 Readme Resources/02 Webpack/Demo01_01_Network.png "Demo01_01_Network.png")
 
 
 - In next demos we will learn how to ask webpack to separate the css into separate

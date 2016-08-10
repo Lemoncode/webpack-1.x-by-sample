@@ -62,7 +62,7 @@ import * as bootstrap from "./bootstrap.css"
 - If we try to run webpack now, we will get errors, webpack is complaining that he is not able to process fonts that are being
 used by bootstrap, we need to set a font appropiated loader.
 
-![Demo01_02_Bootstrap.png](../../../99 Readme Resources/02 Webpack/Demo01_02_Bootstrap.png "Demo01_02_Bootstrap.png")
+![Demo01_02_Bootstrap.png](../../99 Readme Resources/02 Webpack/Demo01_02_Bootstrap.png "Demo01_02_Bootstrap.png")
 
 - Let's setup the appropiate font / glyphicon loaders. We will install
 first [file-loader](https://github.com/webpack/file-loader), emits a file in the output directory and returns the
@@ -122,4 +122,4 @@ module: {
 - Let's launch the application (npm start) and check that our page is being displayed
 using bootstrap styles (see bootstrap jumbotron).
 
-![Demo01_02_BootstrapSamplePage.png](../../../99 Readme Resources/02 Webpack/Demo01_02_BootstrapSamplePage.png "Demo01_02_BootstrapSamplePage.png")
+![Demo01_02_BootstrapSamplePage.png](../../99 Readme Resources/02 Webpack/Demo01_02_BootstrapSamplePage.png "Demo01_02_BootstrapSamplePage.png")

@@ -3,7 +3,7 @@
 In this sample we are going to setup a dist folder where the webpack bundle and
 main HTML page will be copied to.
 
-We will start from sample 02 Server, 
+We will start from sample 02 Server,
 
 Summary steps:
  - Redirect output (bundle.js) to "dist" folder.
@@ -97,7 +97,7 @@ plugins:[
 ]
 ````
 
-![html hash](../../../99 Readme Resources/02 Webpack/Demo03_htmlHash.png "Demo03_htmlHash.png")
+![html hash](../../99 Readme Resources/02 Webpack/Demo03_htmlHash.png "Demo03_htmlHash.png")
 
 
 - This looks quite well but... we are developers, what would happen if we attempt to debug from the browser our web app? By default we only will be able to debug bundle.js (big file already trasnpiled to es5), if we need to pinpoint issues and debug step by step this is far from ideal. Is there a way to let the browser link our original files and let us debug directly on es6 mode? The answer is yes, we only need to add a line of code to our webpack.config cofiguration, right after output closing bracket, we can include this line:
@@ -109,7 +109,7 @@ devtool: 'source-map',
 Now if you just start our web server again (npm start) and open the developer tab we will be
 able to browse our original es6 files and place breakpoints / debug.
 
-![map browser](../../../99 Readme Resources/02 Webpack/Demo03_mapBrowser.png "Demo03_mapBrowser.png")
+![map browser](../../99 Readme Resources/02 Webpack/Demo03_mapBrowser.png "Demo03_mapBrowser.png")
 
 - Just to wrapup... a mandatory step on any web app is not minify / obsfuscate the javascript
 files, in order to do that we only need to call webpack adding the param -p
@@ -120,4 +120,4 @@ webpack -p
 
 If we open the generated bundle.js file we will realize that the new version has been minified.
 
-![minified](../../../99 Readme Resources/02 Webpack/Demo03_Minified.png "Demo03_Minified.png")
+![minified](../99 Readme Resources/02 Webpack/Demo03_Minified.png "Demo03_Minified.png")

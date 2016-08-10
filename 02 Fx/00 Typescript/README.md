@@ -111,4 +111,4 @@ module: {
 - Now if we start the app (npm start) and start the debugger we can directly
 place breakpoints on the typescript files.
 
-![Demo01_02_DebugTS.png](../../../99 Readme Resources/02 Webpack/Demo01_02_DebugTS.png "Demo01_02_DebugTS.png")
+![Demo01_02_DebugTS.png](../../99 Readme Resources/02 Webpack/Demo01_02_DebugTS.png "Demo01_02_DebugTS.png")

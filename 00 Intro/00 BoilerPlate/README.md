@@ -30,7 +30,7 @@ file we will generated).
 npm init
 ````
 
-![npm init](../../../99 Readme Resources/02 Webpack/Demo00_npminit.png "Demo00_npminit.png")
+![npm init](../../99 Readme Resources/02 Webpack/Demo00_npminit.png "Demo00_npminit.png")
 
 - We will now install locally webpack, as a development dependency (the reason to install it locally and not globaly is to be easy to setup, e.g. can be launched on a clean machine without having to install anything globally but nodejs)
 
@@ -56,7 +56,7 @@ npm install babel-loader --save-dev
 
 Our package.json file should look something like:
 
-![package.json](../../../99 Readme Resources/02 Webpack/Demo00_packagejson.png "Demo00_npminit.png")
+![package.json](../../99 Readme Resources/02 Webpack/Demo00_packagejson.png "Demo00_npminit.png")
 
 
 - Now we are going to create a js file called students.js that will include ES6 syntax.
@@ -104,7 +104,7 @@ module.exports = {
 
 - Let's run webpack from the command line, we can check that a file named "bundle.js" has been generated.
 
-![npm init](../../../99 Readme Resources/02 Webpack/Demo00_webpackexec.png "Demo00_webpackexec.png")
+![npm init](../../99 Readme Resources/02 Webpack/Demo00_webpackexec.png "Demo00_webpackexec.png")
 
 - if we open the bundle.js files we can check that it contains (amongst other boiler plate code) the transpiled to es5 version of students.js
 
@@ -139,4 +139,4 @@ module.exports = {
 ```
 
 
-![Browser](../../../99 Readme Resources/02 Webpack/Demo00_browser.png "Demo00_browser.png")
+![Browser](../../99 Readme Resources/02 Webpack/Demo00_browser.png "Demo00_browser.png")
