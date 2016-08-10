@@ -1,7 +1,7 @@
 # Webpack 1.x by sample
 
 Learn webpack by sample, each of the samples contains a readme.md file that
-indicated the purpose of the sample plus an step by step guide
+indicates the purpose of the sample plus an step by step guide to reproduce it.
 
 The Lemoncode Frontend Master Students are working on a review process, if you want to cooperate in this process or add more useful samples don't hesitate to contact us, fork the project and asking for PR once ready.
 
