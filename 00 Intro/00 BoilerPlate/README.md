@@ -16,7 +16,8 @@ Summary steps:
 
 ## Prerequisites
 
-Prerequisites, you will need to have nodejs installed in your computer.
+Prerequisites, you will need to have [nodejs](https://nodejs.org/en/) (v. 6.3.1) installed in your computer.
+
 
 ## steps
 
