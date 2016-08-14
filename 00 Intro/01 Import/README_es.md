@@ -1,33 +1,31 @@
 # Ejemplo de módulos
 
-En este ejemplo vamos a empezar a trabajar con módulos es6 (import).
+En este ejemplo comenzaremos a trabajar con módulos es6 (import).
 
-We will start from sample 00 Demo and add a new javascript that will
-hold a simple algorithm to calculate the average of an score array.
-Partiendo de la muestra 00 Intro / 00 BoilerPlate y añadiremos un nuevo fichero JavaScript que
-implemente un algoritmo simple para calcular el promedio de una matriz de puntuación.
+Partiendo de la muestra 00 Intro / 00 BoilerPlate añadiremos un nuevo fichero JavaScript que
+implemente un algoritmo simple para calcular el promedio de una matriz de puntuaciones.
 
-Usaremos este nuevo array javascript en el fichero principal, students.js, realizando una importación de él.
+Usaremos este nuevo array Javascript en el fichero principal, students.js, realizando una importación de él.
 
-Summary steps:
- - Add a new file averageService.js
- - Add an array on students.js
- - Import averageService into students.js
- - Use the averageService inside the students.js code.
- - Transpile and test on index.html
+Pasos:
+ - Añadir un nuevo fichero averageService.js
+ - Añadir un array en students.js
+ - Importar averageService en students.js.
+ - Usar averageService dentro del código de students.js.
+ - Transpilar y testear con index.html
 
 
-# Steps to build it
+# Pasos para construirlo
 
-## Prerequisites
+## Prerrequisitos
 
-Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this step guides you will need to take as starting point sample "00 BoilerPlate"
+Necesitarás tener instalado [nodejs] (https://nodejs.org/en/) (v. 6.3.1) en tu ordenador. Si quieres seguir esta guía de pasos necesitarás tomar como referencia de inicio el ejemplo "00 Intro / 00 BoilerPlate"
 
-## steps
+## Pasos
 
-- Let's add a new file called averageService.js, this file will contain a function that will calculate the average value of a given array, this function will be exported (make it visible to other modules that need to consume them)
+- Añade un nuevo fichero con nombre averageService.js. Este fichero contendrá una función que calculará el valor medio de un array dado. La función se exportará (export) para hacerla visible a otros módulos que necesiten consumirla.
 
-```
+```javascript
 export function getAvg(score) {
   return score.reduce(function (p, c) {
     return p + c;
@@ -35,9 +33,9 @@ export function getAvg(score) {
 }
 ```
 
-- Now let's update students.js to import that file and consume it.
+- Ahora actualizaremos students.js para que importe este nuevo fichero y pueda utilizarlo.
 
-````
+```javascript
 import {averageService} from "./averageService"
 
 const scores = [90, 75, 60, 99, 94, 30]
@@ -45,33 +43,34 @@ const averageScore = averageService(scores);
 const messageToDisplay = `average score ${averageScore}`;
 
 document.write(messageToDisplay);
-````
+```
 
-- Now let's run webpack from the command prompt and click on the index.html, we
-can see that the new average function is up and running and has been included in
-the bundle.js file.
+- Ejecutaremos webpack desde la línea de comandos y al pinchar en index.html veremos que la nueva función está levantada y ejecutándose y ha sido incluida en el fichero  bundle.js.
 
 ![npm init](../../99 Readme Resources/02 Webpack/Demo00_npminit.png "Demo01_Import.png")
 
-## Appendix - Playing with import
+## Apéndice - Jugando con la importación
 
 - Other ways to use modules, one popular way is to use "export default"
 indicating that by default the average function will be the one exported, then
 we can directly use an import "alias" and this will point out to our averarge function.
+Otras formas de utilizar los módulos, una forma popular es el uso de "export default"
+lo que indica que, por defecto la función average será el que se exporta, a continuación,
+podemos utilizar directamente una importación "alias", siendo este punto señalar que nuestra función averarge.
 
 Export default (averageService.js)
 
-````
+```javascript
 export default function getAvg(score) {
   return score.reduce(function (p, c) {
     return p + c;
   }) / score.length;
 }
-````
+```
 
 Import and usage (students.js)
 
-````
+```javascript
 import getAvg from "./averageService"
 
 const scores = [90, 75, 60, 99, 94, 30]
@@ -79,7 +78,7 @@ const averageScore = getAvg(scores);
 const messageToDisplay = `average score ${averageScore}`;
 
 document.write(messageToDisplay);
-````
+```
 
 
 - Another way to use import is to use "*" to indicate we want to import everything
