@@ -38,8 +38,7 @@ first we will require an import "webpack" at the top of the file:
 var webpack = require("webpack");
 ````
 
-- Then we will use a plugin from webpack to define as global variables jquery and
-$
+- Then we will use a plugin from webpack to define as global variables: jQuery and $.
 
 ````
 plugins:[
@@ -54,7 +53,7 @@ plugins:[
 - Now it's ready to use, just to test it, let's change the background color of the page body to blue. Let's change the background of the body element using jquery:
 
 ````
-import {getAvg} from './averageService'
+import {getAvg} from './averageService';
 
 $('body').css('background-color', 'blue');
 ````
@@ -78,7 +77,7 @@ module.exports = {
 
 ````
 plugins:[
-  new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+  new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
   new webpack.ProvidePlugin({
 ````
 
@@ -87,7 +86,7 @@ Now if we take a look to the dist folder we can check that the two bundles have 
 ![Demo04SnapshotDir](../../99 Readme Resources/02 Webpack/Demo04SnapshotDir.png "Demo04SnapshotDir.png")
 
 
-And in the generated index.html (under dist) we can check that both scripts have been successfully referenced:
+Finally in the generated index.html (under dist) we can check that both scripts have been successfully referenced:
 
 ````
 <!DOCTYPE html>
