@@ -1,4 +1,4 @@
-# Boiler Plate Sample
+# Ejemplo Boiler Plate
 
 En este ejemplo vamos a crear un proyecto para poder manejarlo fácilmente con webpack.
 
