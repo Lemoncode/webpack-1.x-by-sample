@@ -17,7 +17,7 @@ Necesitarás tener instalado [nodejs] (https://nodejs.org/en/) (v. 6.3.1) en tu 
 
 ## Pasos
 
-- Vamos a instalar webpack-dev-server este paquete se envía con un servidor lite que se puede utilizar como servidor de desarrollo web. Esta vez tenemos que instalar este paquete como una dependencia global (tenga en cuenta por el parámetro "-g")
+- Vamos a instalar webpack-dev-server este paquete se envía con un servidor lite que se puede utilizar como servidor de desarrollo web. Esta vez tenemos que instalar este paquete como una dependencia global (tenga en cuenta el parámetro "-g")
 
 ````
 npm install webpack-dev-server -g
@@ -28,17 +28,17 @@ npm install webpack-dev-server -g
 ![localhost](../../99 Readme Resources/02 Webpack/Demo02_localhost.png "Demo02_localhost.png")
 
 
-- Si abrimos un navegador podemos indicar la url http://localhost:808 y vamos a navegar por nuestra aplicación web
+- En un navegador podemos indicar la url http://localhost:8080 y vamos a navegar por nuestra aplicación web
 
 ![npm init](../../99 Readme Resources/02 Webpack/Demo03_browser.png "Demo03_browser.png")
 
 
 
-- Una característica interesante que incluye este servidor de desarrollo es la recarga automática, si añadimos una actualización en cualquiera de los archivos javascript se detectará automáticamente y el servidor webpack dev pondrá en marcha el proceso de compilación y una vez terminado automáticamente actualizara la página que está en el navegador. Con el fin de hacer esto tenemos que llamar webpack-dev-servidor con un parámetro adicional:
+- Una característica interesante que incluye este servidor de desarrollo es la recarga automática, si añadimos una actualización en cualquiera de los archivos javascript se detectará automáticamente y el servidor webpack de desarrollo pone en marcha el proceso de compilación y una vez terminado automáticamente actualiza la página que está en el navegador. Con el fin de hacer esto tenemos que llamar webpack-dev-server con un parámetro adicional:
 
 ![npm init](../../99 Readme Resources/02 Webpack/Demo02_inline.png "Demo02_inline.png")
 
-- No es necesario recordar esto parametros cada vez que queremos iniciar nuestro servidor de desarrollo, con el fin de evitar esto podemos simplemente añadir comando "start" en nuestro package.json
+- No es necesario recordar esto parametros cada vez que queremos iniciar nuestro servidor de desarrollo, con el fin de evitar esto podemos simplemente añadir el comando "start" en nuestro package.json
 
 ![npm init](../../99 Readme Resources/02 Webpack/Demo03_Start.png "Demo03_Start.png")
 
@@ -55,4 +55,4 @@ npm install webpack-dev-server --save-dev
 ````
 
 
-Y tendremos el servidor de desarrollo en marcha y funcionando.
+Y así tenemos el servidor de desarrollo en marcha y funcionando.
