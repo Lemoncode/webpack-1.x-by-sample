@@ -9,7 +9,7 @@ Pasos:
  - Ejecuta webpack-dev-server con recarga automática.
  - Añadir comando start en package.json.
 
- # Pasos para construirlo
+# Pasos para construirlo
 
 ## Prerrequisitos
 
