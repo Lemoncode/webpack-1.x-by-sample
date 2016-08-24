@@ -36,9 +36,9 @@ export function getAvg(score) {
 - Ahora actualizaremos students.js para que importe este nuevo fichero y pueda utilizarlo.
 
 ```javascript
-import {getAvg} from "./averageService"
+import {getAvg} from "./averageService";
 
-const scores = [90, 75, 60, 99, 94, 30]
+const scores = [90, 75, 60, 99, 94, 30];
 const averageScore = getAvg(scores);
 const messageToDisplay = `average score ${averageScore}`;
 
@@ -64,9 +64,9 @@ export default function getAvg(score) {
 Importar y usar. (students.js)
 
 ```javascript
-import getAvg from "./averageService"
+import getAvg from "./averageService";
 
-const scores = [90, 75, 60, 99, 94, 30]
+const scores = [90, 75, 60, 99, 94, 30];
 const averageScore = getAvg(scores);
 const messageToDisplay = `average score ${averageScore}`;
 
@@ -79,7 +79,7 @@ Añadiremos al módulo students.js la función getSum con el fin de mostrar esta
 
 Múltiples exportaciones. (averageService.js):
 
-````javascript
+```javascript
 export function getAvg(score) {
   return score.reduce(function (p, c) {
     return p + c;
@@ -91,13 +91,13 @@ export function getSum(score) {
     return p + c;
   });
 }
-````
+```
 
 Importar y usar módulo completo. (students.js)
-````javascript
-import * as stats from "./averageService"
+```javascript
+import * as stats from "./averageService";
 
-const scores = [90, 75, 60, 99, 94, 30]
+const scores = [90, 75, 60, 99, 94, 30];
 const averageScore = stats.getAvg(scores);
 const sumScore = stats.getSum(scores);
 const messageToDisplayAvg = `average score ${averageScore}`;
@@ -105,4 +105,4 @@ const messageToDisplaySum = `sum score ${sumScore}`;
 
 document.write(messageToDisplayAvg);
 document.write(messageToDisplaySum);
-````
+```
