@@ -1,13 +1,13 @@
 var path = require("path");
 var webpack = require("webpack");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 var basePath = __dirname;
 
 module.exports = {
 	entry: {
-		 vendor: ["jquery"],
-		 app: "./students.js"
+		vendor: ["jquery"],
+		app: "./students.js"
 	},
 	output: {
 		path: path.join(basePath, "dist"),
@@ -26,14 +26,14 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-        loader: "babel-loader",
+				loader: "babel-loader",
 				exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
+				query: {
+					presets: ["es2015"]
+				}
 			},
-			//Loading glyphicons => https://github.com/gowravshekar/bootstrap-webpack
-			//Using here url-loader and file-loader
+			// Loading glyphicons => https://github.com/gowravshekar/bootstrap-webpack
+			// Using here url-loader and file-loader
 			{
 				test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
 				loader: "url?limit=10000&mimetype=application/font-woff"
@@ -52,17 +52,17 @@ module.exports = {
 			}
 		]
 	},
-	plugins:[
-		new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+	plugins: [
+		new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
 		new webpack.ProvidePlugin({
-		      $: "jquery",
-		      jQuery: "jquery"
+			$: "jquery",
+			jQuery: "jquery"
 		}),
-    //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html', //Name of file in ./dist/
-      template: 'index.html', //Name of template in ./src
+		// Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
+		new HtmlWebpackPlugin({
+			filename: "index.html", // Name of file in ./dist/
+			template: "index.html", // Name of template in ./src
 			hash: true
-    })
-  ]
+		})
+	]
 }
