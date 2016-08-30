@@ -1,7 +1,7 @@
 # Importing Bootstrap
 
 In this demo we will install the well known [Bootstrap](https://getbootstrap.com/) CSS library, 
-we will configure webpack to import it and use some components.
+we will configure webpack to import it and use a Bootstrap component.
 
 We will start from sample 01 Styles/01 Custom CSS.
 
@@ -117,7 +117,7 @@ module: {
   ]
 },
 ```
-Now observe that when we invoked *url-loader* we just called it url. 
+Observe that when we invoked *url-loader* we just called it *url*. 
 The *-loader* suffix can be cut out. We could also spread this on *babel*, *style* and *css* loaders.
 
 - Let's launch the application (npm start) and check that our page is being displayed
