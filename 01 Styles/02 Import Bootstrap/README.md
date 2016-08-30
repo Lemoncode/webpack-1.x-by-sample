@@ -1,7 +1,7 @@
 # Importing Bootstrap
 
 In this demo we will install the well known [Bootstrap](https://getbootstrap.com/) CSS library, 
-we will configure webpack to import Bootstrap and use a Bootstrap component.
+we will configure webpack to import it and use some components.
 
 We will start from sample 01 Styles/01 Custom CSS.
 
@@ -71,7 +71,7 @@ public url.
 npm install file-loader --save-dev
 ```
 
-- Producing all the files (images, fonts) in separate files is something we are used to, but what happens if we have a lot small files like this? Initial load of the page would be slower requesting a big bunch of small file, another option that we have is to use [url-loader](https://github.com/webpack/url-loader), in this case the files is encoded as data inside the HTML... and we can combine file-loader / url-loader by adding a condition, encode only files that are smaller that a given size.
+- Producing all the files (images, fonts) in separate files is something we are used to, but what happens if we have a lot small files like this? Initial load of the page would be slower requesting a big bunch of small files, another option that we have is to use [url-loader](https://github.com/webpack/url-loader), in this case the files is encoded as data inside the HTML... and we can combine file-loader / url-loader by adding a condition, encode only files that are smaller that a given size.
 
 ```
 npm install url-loader --save-dev
@@ -117,6 +117,8 @@ module: {
   ]
 },
 ```
+Now observe that when we invoked *url-loader* we just called it url. 
+The *-loader* suffix can be cut out. We could also spread this on *babel*, *style* and *css* loaders.
 
 - Let's launch the application (npm start) and check that our page is being displayed
 using Bootstrap styles (see [Bootstrap's jumbotron](https://getbootstrap.com/components/#jumbotron)).
