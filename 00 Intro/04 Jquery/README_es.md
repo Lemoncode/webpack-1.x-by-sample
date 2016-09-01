@@ -29,9 +29,7 @@ npm install jquery --save
 
 ![package.json](../../99 Readme Resources/02 Webpack/Demo04PackageJsonJQuery.png "Demo04PackageJsonJQuery.png")
 
-- Since this is a legacy library it expects to have a global variable available,
-instead of assigning this manually let's define it in the webpack.config.js. file,
-first we will require an import "webpack" at the top of the file:
+- Dado que esta en una librería "legacy" (hecha antes de que emergieran los nuevos estándares) hay que usar una variable global, en vez de asignarlo manualmente, vamos a definirlo en el archivo webpack.config.js, para ello necesitamos una importacion de webpack en la parte de arriba del archivo:
 
 ````
 var webpack = require("webpack");
@@ -61,8 +59,7 @@ $('body').css('background-color', 'blue');
 
 ![Demo04BlueBackground](../../99 Readme Resources/02 Webpack/Demo04BlueBackground.png "Demo04BlueBackground.png")
 
-- To finish with this demo, let's face the following case: we want to split the bundle into two, a main one (application level) and a second one that will hold all the third party library, in order to do that we can use the CommonChunkPlugin
-(already included in webpack), in this plugin we specify the libraries that are going to be placed in the separate library js under the 'vendor' category. First let's start by adding a new entry point called 'vendor', and there we define an array including all the libraries that we want to include under that bundle (note down, entry is not an array any more, it's an object).
+- Para acabar con esta demostración, vamos a plantear este ejemplo: queremos dividir el paquete en dos, uno que sería a nivel de aplicacion, y otro que contendrá las librerías de terceros, para ello vamos a usar CommonChunkPlugin (incluido en webpack), en este plugin vamos a especificar las librerías que van a estar separadas en otro js bajo la categoría de 'vendor'. Empezamos añadiendo un nuevo punto de entrada llamado  'vendor', donde definiremos un array un array con todas las librerías que queremos que estén en este paquete (anotación, la entrada no es un array, es un objeto).
 
 ````
 module.exports = {
