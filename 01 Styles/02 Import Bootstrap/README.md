@@ -8,10 +8,10 @@ We will start from sample 01 Styles/01 Custom CSS.
 Summary steps:
  - Install Bootstrap.
  - Import the CSS library.
- - Use a jumbotron element from Bootstrap in our HTML.
+ - Use a *jumbotron* element from Bootstrap in our HTML.
  - Check that we get errors when running webpack.
- - Install additional loaders in order to manage fonts and other.
- files required by bootstrap.
+ - Install additional loaders in order to manage fonts and other 
+ files required by Bootstrap.
  - Check results.
 
 
@@ -35,7 +35,7 @@ npm install bootstrap --save
 import * as bootstrap from "./node_modules/bootstrap/dist/css/bootstrap.css";
 ```
 
-- Since we are going to dig into node_modules, on the css loader section of webpack.config.js let's remove the node_modules ignore.
+- Since we are going to dig into *node_modules*, on the CSS loader section of webpack.config.js let's remove the node_modules ignore:
 
 ```javascript
 // Since we are importing bootstrap, we need to remove
@@ -46,7 +46,7 @@ import * as bootstrap from "./node_modules/bootstrap/dist/css/bootstrap.css";
 },
 ```
 
-- Let's modify our index.html and include some specific Bootstrap component:
+- Let's modify our *index.html* and include some specific Bootstrap component:
 
 ```html
 <div class="jumbotron">
@@ -64,20 +64,20 @@ used by Bootstrap, we need to set a font appropiated loader:
 ![Demo01_02_Bootstrap.png](../../99 Readme Resources/02 Webpack/Demo01_02_Bootstrap.png "Demo01_02_Bootstrap.png")
 
 - Let's set up the appropiate font / glyphicon loaders. We will install
-first [file-loader](https://github.com/webpack/file-loader). It will produce a new file into our build directory (/dist) and return the
+first [file-loader](https://github.com/webpack/file-loader). It will produce a new file into our build directory (*/dist*) and return the
 public url.
 
 ```
 npm install file-loader --save-dev
 ```
 
-- Producing all the files (images, fonts) in separate files is something we are used to, but what happens if we have a lot small files like this? Initial load of the page would be slower requesting a big bunch of small files, another option that we have is to use [url-loader](https://github.com/webpack/url-loader), in this case the files is encoded as data inside the HTML... and we can combine file-loader / url-loader by adding a condition, encode only files that are smaller that a given size.
+- Producing all the files (images, fonts) in separate files is something we are used to, but what happens if we have a lot of small files? Initial load of the page would be slower requesting a big bunch of small files, another option that we have is to use [url-loader](https://github.com/webpack/url-loader), in this case the files is encoded as data inside the HTML... and we can combine *file-loader* / *url-loader* by adding a condition, encode only files that are smaller that a given size.
 
 ```
 npm install url-loader --save-dev
 ```
 
-- Now let's include this loaders in the webpack.config.js:
+- Now let's include this loaders in *webpack.config.js*:
 
 ```javascript
 module: {
@@ -86,11 +86,11 @@ module: {
     // node_modules ignore
     {
       test: /\.css$/,
-      loader: "style-loader!css-loader"
+      loader: 'style-loader!css-loader'
     },
     {
       test: /\.js$/,
-      loader: "babel-loader",
+      loader: 'babel-loader',
       exclude: /node_modules/,
       query: {
         presets: ["es2015"]
@@ -100,19 +100,19 @@ module: {
     // Using here url-loader and file-loader
     {
       test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "url?limit=10000&mimetype=application/font-woff"
+      loader: 'url?limit=10000&mimetype=application/font-woff'
     },
     {
       test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "url?limit=10000&mimetype=application/octet-stream"
+      loader: 'url?limit=10000&mimetype=application/octet-stream'
     },
     {
       test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "file"
+      loader: 'file'
     },
     {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "url?limit=10000&mimetype=image/svg+xml"
+      loader: 'url?limit=10000&mimetype=image/svg+xml'
     }
   ]
 },
