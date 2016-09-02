@@ -71,7 +71,7 @@ public url.
 npm install file-loader --save-dev
 ```
 
-- Producing all the files (images, fonts) in separate files is something we are used to, but what happens if we have a lot small files like this? Initial load of the page would be slower requesting a big bunch of small files, another option that we have is to use [url-loader](https://github.com/webpack/url-loader), in this case the files is encoded as data inside the HTML... and we can combine *file-loader* / *url-loader* by adding a condition, encode only files that are smaller that a given size.
+- Producing all the files (images, fonts) in separate files is something we are used to, but what happens if we have a lot of small files? Initial load of the page would be slower requesting a big bunch of small files, another option that we have is to use [url-loader](https://github.com/webpack/url-loader), in this case the files is encoded as data inside the HTML... and we can combine *file-loader* / *url-loader* by adding a condition, encode only files that are smaller that a given size.
 
 ```
 npm install url-loader --save-dev
