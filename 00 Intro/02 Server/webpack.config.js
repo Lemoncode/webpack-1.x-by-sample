@@ -3,16 +3,15 @@ module.exports = {
 	output: {
 		filename: "bundle.js"
 	},
-	
 	module: {
 		loaders: [
 			{
 				test: /\.js$/,
-        loader: "babel-loader",
+				loader: "babel-loader",
 				exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
+				query: {
+					presets: ["es2015"]
+				}
 			}
 		]
 	}
