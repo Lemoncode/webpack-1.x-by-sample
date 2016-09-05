@@ -2,7 +2,7 @@
 
 En este ejemplo vamos a añadir imágenes a nuestro proyecto de dos maneras: vía 
 JavaScript y vía HTML. Desde JavaScript veremos que el procedimiento es bastante
-claro (utilizando los mismos plugins que hemos usado para las fuentes), y desde
+sencillo (utilizando los mismos plugins que hemos usado para las fuentes), y desde
 HTML usaremos un nuevo plugin: 
 [*html-loader*](https://github.com/webpack/html-loader). 
 
@@ -14,7 +14,7 @@ Resumen de los pasos:
  - Configurar el plugin.
  - Añadir la segunda imagen a nuestro *index.html*.
  - Instalar *html-loader*.
- - Configurar *html-loader* en *webpack.config.js*.
+ - Configurar *html-loader* dentro de *webpack.config.js*.
 
 
 # Pasos
@@ -42,13 +42,13 @@ componente *jumbotron* de Bootstrap y añadir un `<div>` con una "id".
 </body>
 ```
 
-- Contiruaremos creando un directorio llamado **content** y añadiendo las dos imágenes:
+- Contiruaremos creando un directorio llamado **content** y añadiendo ahí las dos imágenes:
 [logo_1.png](https://github.com/Lemoncode/webpack-1.x-by-sample/blob/master/01%20Styles/04%20Handling%20Images/content/logo_1.png)
 y
 [logo_2.png](https://github.com/Lemoncode/webpack-1.x-by-sample/blob/master/01%20Styles/04%20Handling%20Images/content/logo_2.png).
 
 - Ahora nos dirigimos a *students.js* e importamos *logo_1.png* usando JavaScript.
-Vamos a colocarla dentro del `<div>`.
+Vamos a colocarlo dentro del `<div>` que hemos creado.
 
 
 ```javascript
@@ -93,7 +93,7 @@ de una etiqueta HTML `<img>`?. Vamos a añadir *logo_2.png* dentro de *index.htm
 ```
 
 - Ya que *logo_2.png* no está importada directamente desde un fichero JavaScript 
-no va a ser procesada. Para este caso podemos usar un plugin llamado 
+no se va a procesar. Para resolver esto podemos usar un plugin llamado 
 [html-loader](https://github.com/webpack/html-loader). Este cargador se va a encargar
 de buscar todas las etiquetas `<img>` dentro del HTML y procesarlas.
 Vamos a instalar *html-loader*: 

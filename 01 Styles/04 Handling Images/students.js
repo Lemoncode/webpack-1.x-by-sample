@@ -3,7 +3,7 @@ import * as mystyles from './mystyles.scss';
 import {getAvg} from './averageService';
 import logoImg from './content/logo_1.png';
 
-var img = document.createElement('img');
+const img = document.createElement('img');
 img.src = logoImg;
 
 document.getElementById('imgContainer').appendChild(img);
