@@ -1,16 +1,16 @@
-var path = require("path");
+var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var basePath = __dirname;
 
 module.exports = {
 	resolve: {
-	      extensions: ['', '.js', '.ts']
+		extensions: ['', '.js', '.ts']
 	},
-	entry: ["./students.ts"],
+	entry: ['./students.ts'],
 	output: {
-		path: path.join(basePath, "dist"),
-		filename: "bundle.js"
+		path: path.join(basePath, 'dist'),
+		filename: 'bundle.js'
 	},
 
 	devtool: 'source-map',
@@ -18,13 +18,13 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-	      test: /\.(ts)$/,
-	      exclude: /node_modules/,
-	      loader: 'ts-loader'
+				test: /\.(ts)$/,
+				exclude: /node_modules/,
+				loader: 'ts-loader'
       },
 			{
 				test: /\.js$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
 				exclude: /node_modules/,
         query: {
           presets: ['es2015']
@@ -32,7 +32,7 @@ module.exports = {
 			}
 		]
 	},
-	plugins:[
+	plugins: [
     //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html', //Name of file in ./dist/
