@@ -3,6 +3,7 @@ var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var basePath = __dirname;
+var outputPath = 'dist';
 
 module.exports = {
 	entry: ["./students.js"],
@@ -28,7 +29,7 @@ module.exports = {
 	plugins:[
 		new webpack.DLLReferencePlugin({
 		      context: '../dll/dist',
-		      manifest: require(join(outputPath, 'jqueryStuff.json'))
+		      manifest: require(path.join(outputPath, 'jqueryStuff.json'))
 		}),
 
     //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
