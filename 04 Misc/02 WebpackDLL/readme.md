@@ -30,15 +30,64 @@ for the dll project and fullfill the project info.
 npm init
 ```
 
+- In the package Json let's add a build command (build):
+
+```javascript
+"scripts": {
+  "build": "webpack",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+```
+- Let's install webpack dev dependency
+
+```
+npm install wepback --save-dev
+```
+
 - Let's install jquery and save the dependency
 
 ```
-npm install jquery --save-dev
+npm install jquery --save
 ```
 
 - Let's configure the webpack.config.js file that will generate
 the DLL.
 
+```javascript
+var path = require("path");
+var webpack = require("webpack");
+
+var basePath = __dirname;
+var outputPath = 'dist';
+
+module.exports = {
+  context: process.cwd(),
+  entry: {
+    jqueryStuff:[
+     'jquery',
+    ]
+  },
+
+ output: {
+    filename: '[name].dll.js',
+    path: path.join(basePath, outputPath),
+    library: '[name]',
+  },
+
+  plugins: [
+    new webpack.DllPlugin({
+      name: '[name]',
+      path: path.join(outputPath, '[name].json')
+    })
+  ]
+};
+```
+
+- Let's generate the dll bundle
+
+```
+npm run build
+```
 
 # app project
 
