@@ -18,9 +18,9 @@ Necesitarás tener instalado nodejs en tu ordenador. Si quieres seguir esta guí
 
 ## Pasos
 
-- Let's start by renaming mystyles.css to mystyles.scss
+- Empezamos renombrando mystyles.css a mystyles.scss
 
-- Let's open mystyles.scss and add some sass simple code (in this case we will create a variable that will hold a bluebackground, this will introduce a change into our sample app, a bluebackground will be displayed instead of the former red one):
+- Abrimos mystyles.scss y añadimos código SASS (en este caso crearemos una variable que guarde el color de "background" "bluebackground", esto introducirá un cambio en nuestra aplicacióm, se mostrará un fondo del color que definamos, en vez del rojo que ya habíamos puesto):
 
 ````css
 $my-color: blue;
@@ -30,19 +30,19 @@ $my-color: blue;
 }
 ````
 
-- Since we have change the extension of the css file to scss, we have to update the students.js file.
+- Como hemos cambiado el nombre de la extensión de nuestro archivo, ahora tenemos que actualizarlo en el archivo students.js.
 
 ````javascript
 import * as mystyles from "./mystyles.scss"
 ````
 
-- Now it's time to start with the webpack plumbing, let's install a sass preprocessor loader:
+- Ahora tenemos que instalar un loader para preprocesar estos archivos:
 
 ````
 npm install node-sass --save-dev
 npm install sass-loader --save-dev
 ````
-- We onl need one more step, open our webpack.config and add a new  entry (scss) to the loaders that will use the just installed sass-loader. Interesting to note down: we are chaining loaders, first we preprocess the scss then with the css we obtain as result we just pass the css and styles loaders we were using before.
+- Solo necesitamos un último paso, abre nuestro archivo webpack.config y añade una nueva entrada (scss) para los "loaders" que usaremos el que acabamo de instalar (sass-loader). Interesante anotación: estamos encadenando "loaders", primero procesamos los SCSS, luego obtenemos como resultado el css y los estilos que hemos usado antes con los cargadores.
 
 ````javascript
 module: {
@@ -54,6 +54,6 @@ module: {
     },
 ````
 
-- If we run our app (npm start), we can check that now we are getting a blue backgrond instead of a red one.
+- Si arrancamos nuestra aplicacion (npm start), comprobaremos que tenemos un fondo de color azul, en vez del rojo.
 
 ![Demo01_03_SASS.png](../../99 Readme Resources/02 Webpack/Demo01_03_SASS.png "Demo01_03_SASS.png")
