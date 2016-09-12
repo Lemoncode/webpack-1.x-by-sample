@@ -1,7 +1,7 @@
-import {getAvg} from "./averageService"
+import {getAvg} from "./averageService";
+import * as _ from "lodash";
 
-const scores = [90, 75, 60, 99, 94, 30]
-const averageScore = getAvg(scores);
-const messageToDisplay = `average score ${averageScore}`;
+const result = _.sum([2, 3, 4, 5]);
+const messageToDisplay = `Sum Result ${result}`;
 
 document.write(messageToDisplay);

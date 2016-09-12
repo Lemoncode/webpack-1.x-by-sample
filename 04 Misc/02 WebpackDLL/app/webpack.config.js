@@ -27,13 +27,14 @@ module.exports = {
 		]
 	},
 	plugins:[
-		new webpack.DLLReferencePlugin({
-		      context: '../dll/dist',
-		      manifest: require(path.join(outputPath, 'jqueryStuff.json'))
+		new webpack.DllReferencePlugin({
+			    context: './dll',
+		      manifest: require('./dll/vendor-manifest.json')
+				 ,name: './dll/vendor.dll.js'
 		}),
 
     //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
+		new HtmlWebpackPlugin({
       filename: 'index.html', //Name of file in ./dist/
       template: 'index.html', //Name of template in ./src
 			hash: true

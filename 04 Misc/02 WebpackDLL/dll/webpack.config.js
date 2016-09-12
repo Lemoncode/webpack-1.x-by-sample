@@ -7,8 +7,8 @@ var outputPath = 'dist';
 module.exports = {
   context: process.cwd(),
   entry: {
-    jqueryStuff:[
-     'jquery',
+    vendor:[
+     'lodash',
     ]
   },
 
@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     new webpack.DllPlugin({
       name: '[name]',
-      path: path.join(outputPath, '[name].json')
+      path: path.join(outputPath, '[name]-manifest.json')
     })
   ]
 };

@@ -9,8 +9,8 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "jquery": "^3.1.0"
+  "dependencies": {    
+    "lodash": "^4.15.0"
   },
   "devDependencies": {
     "webpack": "^1.13.2"
