@@ -20,27 +20,27 @@ Summary steps:
 
 ## Prerequisites
 
-Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this step guides you will need to take as starting point sample "00 BoilerPlate"
+Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this step guides you will need to take as starting point sample "00 BoilerPlate".
 
 ## steps
 
-- Let's add a new file called averageService.js, this file will contain a function that will calculate the average value of a given array, this function will be exported (make it visible to other modules that need to consume them)
+- Let's add a new file called averageService.js, this file will contain a function that will calculate the average value of a given array, this function will be exported (make it visible to other modules that need to consume them).
 
-```
+````javascript
 export function getAvg(score) {
   return score.reduce(function (p, c) {
     return p + c;
   }) / score.length;
 }
-```
+````
 
 - Now let's update students.js to import that file and consume it.
 
-````
-import {averageService} from "./averageService"
+````javascript
+import {getAvg} from "./averageService";
 
-const scores = [90, 75, 60, 99, 94, 30]
-const averageScore = averageService(scores);
+const scores = [90, 75, 60, 99, 94, 30];
+const averageScore = getAvg(scores);
 const messageToDisplay = `average score ${averageScore}`;
 
 document.write(messageToDisplay);
@@ -50,17 +50,17 @@ document.write(messageToDisplay);
 can see that the new average function is up and running and has been included in
 the bundle.js file.
 
-![npm init](../../99 Readme Resources/02 Webpack/Demo00_npminit.png "Demo01_Import.png")
+![npm init](../../99 Readme Resources/02 Webpack/Demo00_browser.png "Demo01_Import.png")
 
 ## Appendix - Playing with import
 
-- Other ways to use modules, one popular way is to use "export default"
+- There are other ways to use modules, one popular way is to use "export default"
 indicating that by default the average function will be the one exported, then
 we can directly use an import "alias" and this will point out to our averarge function.
 
 Export default (averageService.js)
 
-````
+````javascript
 export default function getAvg(score) {
   return score.reduce(function (p, c) {
     return p + c;
@@ -70,8 +70,8 @@ export default function getAvg(score) {
 
 Import and usage (students.js)
 
-````
-import getAvg from "./averageService"
+````javascript
+import getAvg from "./averageService";
 
 const scores = [90, 75, 60, 99, 94, 30]
 const averageScore = getAvg(scores);
@@ -88,7 +88,7 @@ the function we need.
 
 Several Exports (AverageService)
 
-````
+````javascript
 export function getAvg(score) {
   return score.reduce(function (p, c) {
     return p + c;
@@ -104,10 +104,10 @@ export function getSum(score) {
 
 Import * and usage sum + average
 
-````
-import * as stats from "./averageService"
+````javascript
+import * as stats from "./averageService";
 
-const scores = [90, 75, 60, 99, 94, 30]
+const scores = [90, 75, 60, 99, 94, 30];
 const averageScore = stats.getAvg(scores);
 const sumScore = stats.getSum(scores);
 const messageToDisplayAvg = `average score ${averageScore}`;
