@@ -85,7 +85,8 @@ Summary steps:
  - Install jquery via npm.
  - Setup a global alias ($).
  - Create some sample code using this library.
- - Break into two bundles bundle.js and lib.js.
+ - Break into two bundles bundle.js and lib.js.  
+
 
 ## 01 Styles
 

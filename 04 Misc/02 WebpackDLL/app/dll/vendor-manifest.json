@@ -1,0 +1,7 @@
+{
+  "name": "vendor",
+  "content": {
+    "./node_modules/lodash/lodash.js": 1,
+    "./node_modules/webpack/buildin/module.js": 2
+  }
+}
