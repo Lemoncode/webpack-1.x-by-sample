@@ -104,8 +104,23 @@ Now going back into the content, we are just going to require the HTML file
 In order to load the HTML we need a new loader, in this case we are going to use
 raw loader (there are other avaialble), let's install this loader:
 
+```
+npm install raw-loader --save-dev
+```
 
 Let's properly configure it into the webpack.config.js
+
+```javascript
+module: {
+  loaders: [
+    {
+      test: /\.html$/,
+      exclude: /node_modules/,
+      loader: "raw-loader"
+    },
+    //...
+   ]
+```
 
 Now we can run the project and check that our latest changes are working as
 expected
@@ -113,3 +128,10 @@ expected
 ```
 npm start
 ```
+
+The final step is to add a controller to this component and add some logic.
+
+Let's create a file called _studentscontroller.js_ and add a list of
+students.
+
+Let's display this customers into the htlm template:

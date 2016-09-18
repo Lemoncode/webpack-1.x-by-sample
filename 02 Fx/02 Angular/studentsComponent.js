@@ -1,5 +1,5 @@
 
 
 export const studentsComponent = {
-  template: '<h1>Students Component</h1>',
+  template: require('./studentsComponent.html')
 }
