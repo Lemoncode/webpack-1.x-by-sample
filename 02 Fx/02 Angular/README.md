@@ -59,11 +59,33 @@ npm start
 Application up and running, let's move forward, we can now remove the test
 _console.log_ entry in the students file. We are going to create a new file
 that will contain a simple component with an inline template, let's create
-a file called _studentsCompo.js
+a file called _studentsComponent.js_
 
+```javascript
+export const studentsComponent = {
+  template: '<h1>Students Component</h1>',
+}
+```
+
+Let's register this component in our main app (students.js)
+
+```javascript
+import * as angular from 'angular'
+import {studentsComponent} from './studentsComponent'
+
+var app = angular.module('myStudentsApp', []);
+
+app.component('studentsComponent', studentsComponent);
+```
 
 Now that we have the component defined, we can instantiate in the index.html
-file
+file (remember kebap case for the HTML, in this case studentsComponent turns in to students-component)
+
+```HTML
+<body ng-app="myStudentsApp">
+  <students-component/>
+</body>
+```
 
 If we run the sample we can see that the component get's instantiated and
 rendering properly.
