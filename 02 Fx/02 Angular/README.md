@@ -131,7 +131,25 @@ npm start
 
 The final step is to add a controller to this component and add some logic.
 
-Let's create a file called _studentscontroller.js_ and add a list of
-students.
+Let's create add this controller to the studentsComponents
 
-Let's display this customers into the htlm template:
+```javascript
+export const studentsComponent = {
+  template: require('./studentsComponent.html'),
+  controller: function() {
+    this.message = "Hello from students components";
+  }
+}
+```
+
+Let's display this customers into the html template:
+
+```javascript
+<h1>Message: {{$ctrl.message}}</h1>
+```
+
+Now if we run the sample we can see the new message in application
+
+```
+npm start
+```
