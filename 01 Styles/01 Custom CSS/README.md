@@ -17,7 +17,7 @@ Summary steps:
 
 ## Prerequisites
 
-Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this guide you will need to take as starting point sample "00 Intro/03 Jquery"
+Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this guide you will need to take as starting point sample "00 Intro/04 Jquery"
 
 ## steps
 
