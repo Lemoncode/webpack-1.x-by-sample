@@ -1,8 +1,8 @@
 # Modules Sample
 
-In this sample we are going to introduce Linting. This is a technique which you can analyse code for potential errors, so that can help you to make less mistakes.
+In this sample we are going to introduce **Linting**. This is a technique which you can analyse code for potential errors, so that can help you to make less mistakes.
 
-We will start from sample _00 Intro/03 Output_.
+We will start from sample _"00 Intro/03 Output"_.
 
 Summary steps:
  - Installing ESLint.
@@ -15,12 +15,12 @@ Summary steps:
 
 ## Prerequisites
 
-Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this step guides you will need to take as starting point sample "03 Output"
+Prerequisites, you will need to have [nodejs](https://nodejs.org/en/) (v. 6.3.1) installed on your computer. If you want to follow this step guides you will need to take as starting point sample _"00 Intro/03 output"_.
 
-# Installing and Configuring
+## Installing and Configuring
 
-- ESLint is the newest tool for linting that goes to the next level and it allows us to using custom rules, parsers, plugings, etc.
-Let's start by downloading the eslint library via npm, in this case we will execute the following command from the command prompt "npm install eslint --save-dev"
+- [ESLint](http://eslint.org/) is the newest tool for _linting_ that goes to the next level and it allows us to use custom rules, parsers, plugins, etc.
+Let's start by downloading the `eslint` library via `npm`, in this case we will execute the following command from the command prompt `npm install eslint --save-dev`:
 
 ```
 npm install eslint --save-dev
@@ -29,10 +29,10 @@ npm install eslint --save-dev
 ![package.json installing eslint](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/00 Install eslint.png)
 
 - ESLint works with Babel and JSX syntax by installing plugins. That is, It's a great library to develop React projects. This sample is a demo, so come on to implement a basic configuration.
-We are going to create a file _.eslintrc.json_ (there are many [file formats options](http://eslint.org/docs/user-guide/configuring#configuration-file-formats))
+We are going to create a file `.eslintrc.json` (there are many [file formats options](http://eslint.org/docs/user-guide/configuring#configuration-file-formats))
 
-### .eslintrc.json
-```
+#### .eslintrc.json
+```json
 {
   "extends": [
     "eslint:recommended"
@@ -47,8 +47,8 @@ We are going to create a file _.eslintrc.json_ (there are many [file formats opt
 
 - We can implement a [npm command script](https://docs.npmjs.com/misc/scripts) to run eslint:
 
-### package.json
-```
+#### package.json
+```json
 "scripts": {
   "start": "webpack-dev-server --inline",
   "lint": "eslint .",
@@ -70,8 +70,8 @@ npm run lint
 npm install babel-eslint --save-dev
 ```
 
-### .eslintrc.json
-```
+#### .eslintrc.json
+```json
 {
   "extends": [
     "eslint:recommended"
@@ -86,7 +86,7 @@ npm install babel-eslint --save-dev
 
 - As we see, this time `npm run lint` doesn't throw any errors, it sounds good!. But we want to execute ESLint while we are writing our code. That is, the following step is connect ESLint with Webpack.
 
-- We should install _eslint-loader_:
+- We should install `eslint-loader`:
 
 ```
 npm install eslint-loader --save-dev
@@ -96,10 +96,9 @@ npm install eslint-loader --save-dev
 
 - To configure Webpack, we're going to use preloader definition. We make sure ESLint parse the code before any other process. We get a _webpack.config.js_ like this:
 
-### webpack.config.js
-```
+#### webpack.config.js
+```javascript
 ...
-
 module: {
   preLoaders: [
     {
@@ -110,20 +109,27 @@ module: {
   ],
   loaders: [
     {
-      ....
-```
-
-- Now we can remove previous npm command and execute `npm start`.
-
-### package.json
-```
+      test: /\.js$/,
+      loader: "babel-loader",
+      exclude: /node_modules/,
+      query: {
+        presets: ['es2015']
+      }
+    }
+  ]
+},
 ...
+```
 
+- Now we can remove previous npm command and execute again `npm start`.
+
+#### package.json
+```json
+...
 "scripts": {
   "start": "webpack-dev-server --inline",
   "test": "echo \"Error: no test specified\" && exit 1"
 },
-
 ...
 ```
 
@@ -131,9 +137,9 @@ module: {
 
 - Naked eye, it looks like nothing happens with the build. Let's go to change the code:
 
-### BEFORE students.js
+#### BEFORE students.js
 
-```
+```javascript
 import {getAvg} from "./averageService"
 
 const scores = [90, 75, 60, 99, 94, 30]
@@ -144,9 +150,9 @@ document.write(messageToDisplay);
 ```
 
 
-### Typo: using _message_ instead of _messageToDisplay_
+#### Typo: using _message_ instead of _messageToDisplay_
 
-```
+```javascript
 import {getAvg} from "./averageService"
 
 const scores = [90, 75, 60, 99, 94, 30]
@@ -158,28 +164,29 @@ document.write(message);
 
 ![Typo](../../99 Readme Resources/02 Webpack/04 Misc/01 Linting/05 Typo in students.js.png)
 
-# Defining Rules
+## Defining Rules
 
 - As we see previously, we are using [ESLint default rules](http://eslint.org/docs/rules/)
 
-### .eslintrc.json
-```
+#### .eslintrc.json
+```json
 {
   "extends": [
     "eslint:recommended"
   ],
-...
+  ...
+}
 ```
 
 - The good news is that we can [configure all of these rules](http://eslint.org/docs/user-guide/configuring#configuring-rules) following these values:
 
-  - Disable rule: _0_ or _off_
-  - Turn to warning: _1_ or _warn_
-  - Turn to error: _2_ or _error_
+  - `0` o `off` - Disable rule.
+  - `1` o `warn` - Turn to warning.
+  - `2` o `error` - Turn to error.
 
-- For example, if we change _students.js_ to this code:
+- For example, if we change `students.js` to this code:
 
-```
+```javascript
 import {getAvg} from "./averageService"
 
 const scores = [90, 75, 60, 99, 94, 30]
@@ -195,7 +202,7 @@ console.log(messageToDisplay);
 
 - We can disable this rule with the following configuration:
 
-```
+```json
 {
   "extends": [
     "eslint:recommended"
@@ -214,7 +221,7 @@ console.log(messageToDisplay);
 
 - Other example is rule named [max-lines](http://eslint.org/docs/rules/max-lines) that it _enforces a maximum number of lines per file, in order to aid in maintainability and reduce complexity._
 
-```
+```json
 {
   "extends": [
     "eslint:recommended"
