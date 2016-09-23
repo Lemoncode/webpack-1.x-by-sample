@@ -9,15 +9,15 @@ We will start from sample 00 Intro/04 JQuery.
 
 Summary steps:
  - Create a custom css file.
- - Install style loader and css loader packages .
- - Configure webpackconfig.
+ - Install style loader and css loader packages.
+ - Configure webpack.config.js
 
 
 # Steps to build it
 
 ## Prerequisites
 
-Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this guide you will need to take as starting point sample "00 Intro/04 Jquery"
+Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this guide you will need to take as starting point sample "00 Intro/04 Jquery".
 
 ## steps
 
@@ -41,7 +41,7 @@ used on some e.g. div. (we will name it mystyles.css)
 </body>
 ```
 
-- Let's start installing style-loader and css-loader as dev dependencis
+- Let's start installing style-loader and css-loader as dev dependencies
 
 
 ````
@@ -56,7 +56,7 @@ npm install css-loader --save-dev
 - Let's import this style from our main javascript file, we have to add the following line of code into the students.js file:
 
 ````javascript
-import * as styles from "./mystyles.css"
+import * as styles from "./mystyles.css";
 ````
 - If we launch a webpack build this will throw errors, that's because we haven't
 defined any loader to handle the css extension, let's configure webpack
@@ -88,12 +88,12 @@ being display on the div we have chosen.
 
 ![Demo01_00_CSS.png](../../99 Readme Resources/02 Webpack/Demo01_00_CSS.png "Demo01_00_CSS.png")
 
-- Where did the css go? If we open the developer tools in our browser and hit
+- Why did the blue background dissappeared? Where did the css go? If we open the developer tools in our browser and hit
 the network tab we can check that there is no CSS file being requested, but if we
 open the main HTML file, we can check how this have been included as a style.
 
 ![Demo01_01_Network.png](../../99 Readme Resources/02 Webpack/Demo01_01_Network.png "Demo01_01_Network.png")
 
 
-- In next demos we will learn how to ask webpack to separate the css into separate
-files, depending on your scenario you could choose one way or the other.
+- In next demos we will learn how to ask webpack to separate our styles from bundle.js 
+into separate css output file, depending on your scenario you could choose one way or the other.
