@@ -110,4 +110,4 @@ webpack -p
 
 Si abrimos el fichero generado bundle.js, podemos comprobar que la nueva versión a sido minimizada.
 
-![minified](../../99 Readme Resources\02 Webpack\Demo03_Minified.png "Demo03_Minified.png")
+![minified](../../99 Readme Resources/02 Webpack/Demo03_Minified.png "Demo03_Minified.png")
