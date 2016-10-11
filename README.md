@@ -196,3 +196,25 @@ Summary steps:
  - Connecting with Babel.
  - Connecting with Webpack.
  - Adding custom rules.
+
+### 02 Webpack DLL
+
+Webpack DLL allows us to separate the libraries bundling in a separate js file, this js file can be just referenced by the main app file, saving precious build time, and allowing us to keep js libraries grouped.
+
+We will create the following structure and projects
+
+- dll: the DLL project will generate a single chunk holding jquery library (it could hold several libraries and several chunks)
+
+- app: the application project, it will consume the DLL project (saving us transpiling time).
+
+### 02 Webpack 2 Tree Shaking
+
+On of the most interest features that ships Webpack 2 is TreeShaking: this allows to remove from a destination bundle the exports that are not in use by the project, reducing dramatically the site of our bundle.
+
+We are going to create a simple sample:
+
+- A calculator module where we create an export per basic operatin (sum, substract, mul, div..).
+
+- A main.js file that will import this calculator module and use only sum operation.
+
+We will use webpack's 2 tree shaking and check that we end up having a bundle that doesnt contain the code for substract, mul, and div
