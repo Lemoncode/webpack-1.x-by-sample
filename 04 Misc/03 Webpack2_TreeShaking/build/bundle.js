@@ -1,0 +1,1 @@
+!function(r){function t(e){if(n[e])return n[e].exports;var o=n[e]={exports:{},id:e,loaded:!1};return r[e].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var n={};return t.m=r,t.c=n,t.oe=function(r){throw r},t.p="",t(t.s=1)}([function(r,t,n){function e(r,t){return r+t}t.sum=e},function(r,t,n){var e=n(0);e.sum(2,2);document.write("Sum result: {$result}")}]);
