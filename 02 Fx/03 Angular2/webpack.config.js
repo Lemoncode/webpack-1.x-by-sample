@@ -5,6 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var basePath = __dirname;
 
 module.exports = {
+
   context: path.join(basePath, "src"),
   resolve: {
     extensions: ['', '.js', '.ts']
@@ -65,4 +66,5 @@ module.exports = {
       template: 'index.html'
     })
   ]
+
 }
