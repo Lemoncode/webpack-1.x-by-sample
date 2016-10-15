@@ -120,4 +120,4 @@ webpack -p
 
 If we open the generated bundle.js file we will realize that the new version has been minified.
 
-![minified](../99 Readme Resources/02 Webpack/Demo03_Minified.png "Demo03_Minified.png")
+![minified](../../99 Readme Resources/02 Webpack/Demo03_Minified.png "Demo03_Minified.png")

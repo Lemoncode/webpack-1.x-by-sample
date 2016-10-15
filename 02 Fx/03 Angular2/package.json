@@ -1,0 +1,40 @@
+{
+  "name": "angular2-webpack-sample-app",
+  "version": "1.0.0",
+  "description": "Angular 2 with Webpack Sample App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [
+    "angular2",
+    "webpack",
+    "sample",
+    "app"
+  ],
+  "author": "David Atencia <david.atencia@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.22.0",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.8.2",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "@angular/common": "^2.0.2",
+    "@angular/compiler": "^2.0.2",
+    "@angular/core": "^2.0.2",
+    "@angular/platform-browser": "^2.0.2",
+    "@angular/platform-browser-dynamic": "^2.0.2",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.0-beta.12",
+    "zone.js": "^0.6.25"
+  }
+}
