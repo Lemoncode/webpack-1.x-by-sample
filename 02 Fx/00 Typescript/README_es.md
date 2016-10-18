@@ -2,7 +2,7 @@
 
 En este ejemplo añadiremos soporte para [TypeScript](https://www.typescriptlang.org/).
 
-Epezaremos desde el ejemplo
+Partiremos desde el ejemplo
 [00 Intro / 03 Ouput](https://github.com/Lemoncode/webpack-1.x-by-sample/tree/master/00%20Intro/03%20Output)
 , instalaremos TypeScript de forma local, configuraremos un fichero *tsconfig.json*,
 añadiremos unos cuantos ficheros TypeScript, instalaremos el plugin
@@ -11,7 +11,7 @@ añadiremos unos cuantos ficheros TypeScript, instalaremos el plugin
 
 Resumen de los pasos:
  - Instalar TypeScript como dependencia local.
- - Configurar TypeScript en nuestro usando el fichero *tsconfig.json*.
+ - Configurar TypeScript en nuestro proyecto usando el fichero *tsconfig.json*.
  - Migrar el código de nuestro proyecto a TypeScript y añadirle algunas características
  propias del lenguaje.
  - Instalar el plugin [*ts-loader*](https://github.com/TypeStrong/ts-loader).
@@ -37,7 +37,7 @@ TypeScript de forma local(*):
 npm install typescript --save-dev
 ```
 
-_(*) ¿Por qué unstalar TypeScript de forma local y no global? Porque instalarlo de forma
+_(*) ¿Por qué instalar TypeScript de forma local y no global? Porque instalarlo de forma
 local hace que nuestro proyecto no dependa de dependencias globales y es más fácil,
 por ejemplo, generarlo y pasar pruebas unitarias en una máquina limpia de IC (Integración
 Continua) como [Travis](https://travis-ci.org/),[Docker](https://www.docker.com/),
