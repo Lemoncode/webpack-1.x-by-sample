@@ -47,6 +47,8 @@ document.write(messageToDisplay);
 
 - Ejecutaremos webpack desde la línea de comandos y al pinchar en index.html veremos que la nueva función está levantada, ejecutándose y ha sido incluida en el fichero bundle.js.
 
+![npm init](../../99 Readme Resources/02 Webpack/Demo00_browser.png "Demo01_Import.png")
+
 ## Apéndice - Jugando con la importación
 
 - una forma popular es el uso de "export default" indicando que por defecto la función getAvg será la que se exporta. A continuación podemos utilizar directamente una importación "alias", siendo en este punto donde indicaremos nuestra función getAvg:
