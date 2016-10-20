@@ -39,6 +39,42 @@ Install [Node.js and npm](https://nodejs.org/en/) if they are not already instal
 
  ![npm init](../../99 Readme Resources/02 Fx/03 Angular2/npm_init.png "npm_init.png")
 
+- Install TypeScript as a dev dependency.
+
+ ```bash
+ $ npm install typescript --save-dev
+ ```
+
+- Add a TypeScript configuration file, `tsconfig.json`, with the next content.
+
+ ```json
+ {
+   "compilerOptions": {
+     "target": "es5",
+     "module": "commonjs",
+     "declaration": false,
+     "noImplicitAny": false,
+     "removeComments": true,
+     "sourceMap": true,
+     "experimentalDecorators": true,
+     "emitDecoratorMetadata": true,
+     "noLib": false,
+     "preserveConstEnums": true,
+     "suppressImplicitAnyIndexErrors": true
+   },
+   "compileOnSave": false,
+   "exclude": [
+       "node_modules"
+   ],
+   "atom": {
+       "rewriteTsconfig": false
+   }
+ }
+ ```
+
+ This file specifies the compiler options required to compile the project,
+ e.g transpile to ES5.
+
 - Now install the required dependencies for Angular 2 and save it in the dependencies list.
 
  ```bash
@@ -54,6 +90,22 @@ Install [Node.js and npm](https://nodejs.org/en/) if they are not already instal
  ```
 
  > This will install most of the angular 2 typings.
+
+- Modify the `tsconfig.json` file and add the following compiler options.
+
+ ```json
+ "compilerOptions": {
+     ...
+     "typeRoots": [
+         "node_modules/@types"
+     ],
+     "types": [
+         "core-js"
+     ]
+ },
+ ```
+
+ > These options specifies which `@types` packages are included in our compilation.
 
 ### Configure Webpack
 
