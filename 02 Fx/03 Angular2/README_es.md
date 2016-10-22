@@ -4,8 +4,6 @@ En este ejemplo vamos a configurar una app básica de Angular 2 con Webpack.
 
 Pasos a seguir:
 - Prerrequisito: Instalar Node.js y npm.
-- Instalar TypeScript como dependencia local.
-- Configurar TypeScript en nuestro usando el fichero *tsconfig.json*.
 - Crear y configurar el proyecto.
 - Configurar webpack.
 - Crear la aplicación.
@@ -20,44 +18,7 @@ Instalar [Node.js and npm](https://nodejs.org/en/) si no está todavía instalad
 
 ## Pasos
 
-- TypeScript es un buen *superset* de JavaScript que permite añadir tipado entre
-otras características interesantes. Todo el código que hagamos en TypeScript no se
-ejecutará en el navegador, por eso necesitaremos *transpilarlo*. Vamos a instalar
-TypeScript de forma local(*):
-
-```
-npm install typescript --save-dev
-```
-
-_(*) ¿Por qué unstalar TypeScript de forma local y no global? Porque instalarlo de forma
-local hace que nuestro proyecto no dependa de dependencias globales y es más fácil,
-por ejemplo, generarlo y pasar pruebas unitarias en una máquina limpia de IC (Integración
-Continua) como [Travis](https://travis-ci.org/),[Docker](https://www.docker.com/),
-[Jenkins](https://jenkins.io/), etc. Otro beneficio de instalarlo de forma local
-es que podemos instalar una versión específica de TypeScript sin depender de ninguna
-versión global en el ordenador en el que se ejecuta._
-
-- El siguiente paso es añadir el fichero de configuración de TypeScript, *tsconfig.json*.
-En este fichero definiremos la configuración que queramos, como *transpilar* nuestro
-código a ES5 entre otras.
-
-```json
-{
-  "compilerOptions": {
-  "target": "es5",
-  "module": "commonjs",
-  "declaration": false,
-  "noImplicitAny": false,      
-  "sourceMap": true,
-  "suppressImplicitAnyIndexErrors": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
-}
-```
-
-### Crea y configura el proyecto
+### Crear y configurar el proyecto
 
 - Crea un directorio para ubicar el ejemplo, y haz que sea tu directorio de trabajo.
 
@@ -78,6 +39,54 @@ código a ES5 entre otras.
 
  ![npm init](../../99 Readme Resources/02 Fx/03 Angular2/npm_init.png "npm_init.png")
 
+- Instala TypeScript como dependencia de desarrollo
+
+TypeScript es un buen *superset* de JavaScript que permite añadir tipado entre
+otras características interesantes. Todo el código que hagamos en TypeScript no se
+ejecutará en el navegador, por eso necesitaremos *transpilarlo*. Vamos a instalar
+TypeScript de forma local(*):
+
+```
+npm install typescript --save-dev
+```
+
+_(*) ¿Por qué instalar TypeScript de forma local y no global? Porque instalarlo de forma
+local hace que nuestro proyecto no dependa de dependencias globales y es más fácil,
+por ejemplo, generarlo y pasar pruebas unitarias en una máquina limpia de IC (Integración
+Continua) como [Travis](https://travis-ci.org/),[Docker](https://www.docker.com/),
+[Jenkins](https://jenkins.io/), etc. Otro beneficio de instalarlo de forma local
+es que podemos instalar una versión específica de TypeScript sin depender de ninguna
+versión global en el ordenador en el que se ejecuta._
+
+- El siguiente paso es añadir el fichero de configuración de TypeScript, *tsconfig.json*.
+En este fichero definiremos la configuración que queramos, como *transpilar* nuestro
+código a ES5 entre otras.
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noLib": false,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "compileOnSave": false,
+  "exclude": [
+      "node_modules"
+  ],
+  "atom": {
+      "rewriteTsconfig": false
+  }
+}
+```
+
 - Ahora instala las dependencias de Angular 2 y guárdalas en la lista de dependencias.
 
  ```bash
@@ -93,6 +102,23 @@ código a ES5 entre otras.
  ```
 
  > Esto instalará la mayoría de tipificaciones de Angular 2.
+
+ - Modifica el archivo `tsconfig.json` y añade en CompilerOptions lo siguiente.
+
+  ```json
+  "compilerOptions": {
+      ...
+      "typeRoots": [
+          "node_modules/@types"
+      ],
+      "types": [
+          "core-js"
+      ]
+  },
+  ```
+
+  > Estas opciones especifican que paquetes `@types` se incluyen en nuestra compilación.
+
 
 ### Configura Webpack
 
