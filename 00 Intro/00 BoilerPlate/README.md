@@ -84,7 +84,7 @@ module.exports = {
   output: {
     filename: "bundle.js"
   }
-}
+};
 ```
 
 - Now add support for es6, we will ask webpack to handle all js files under the project folder (excluding the `node_modules` subfolder) and transpile them from es6 to es5 (using the `babel-loader`).
@@ -108,7 +108,7 @@ module.exports = {
       }
     ]
   }
-}
+};
 ```
 
 - Let's run webpack from the command line, type `npm start` and press enter.
@@ -144,7 +144,7 @@ npm start
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Webpack 1.x by sample</title>
     <script src="bundle.js"></script>
   </head>
   <body>
