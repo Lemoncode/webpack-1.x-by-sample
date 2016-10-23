@@ -1,6 +1,6 @@
 # Ejemplo de Módulos
 
-En este fichero vamos a entrar en "modo desarrollador", el trabajo con archivos de servicios no es ideal cuando se está desarrollando una aplicación web, vamos a aprender cómo poner en marcha un servidor web lite, cómo desplegar nuestro paquete en una carpeta distinta (incluyendo index.html), cómo depurar directamente nuestro código es6 en el depurador de navegador y minimizar nuestro bundle.js.
+En este fichero vamos a entrar en "modo desarrollador", el trabajo con archivos de servicios no es ideal cuando se está desarrollando una aplicación web, vamos a aprender cómo poner en marcha un servidor web _lite_, cómo desplegar nuestro paquete en una carpeta distinta (incluyendo index.html), cómo depurar directamente nuestro código es6 en el depurador de navegador y minimizar nuestro bundle.js.
 
 Partiendo de los pasos del ejemplo 00 Intro / 01 Import, instala webpack-dev-server, configura nuestro config para desplegar en la carpeta de configuración y soporte de mapas (depuración), entonces vamos a minimizar nuestro archivo bundle.js a través de parámetros webpack cli.
 
