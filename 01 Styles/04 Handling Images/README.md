@@ -2,7 +2,7 @@
 
 In this demo we are going to include images in our project in two flavours: via
 JavaScript and via HTML. On the JavaScript side we will see it's something
-straightforward (using the same plugins we used for fonts), for the HTML we will 
+straightforward (using the same plugins we used for fonts), for the HTML we will
 use a new loader: [*html-loader*](https://github.com/webpack/html-loader).
 
 We will start from sample [01 Styles / 03 SASS](https://github.com/Lemoncode/webpack-1.x-by-sample/tree/master/01%20Styles/03%20SASS).
@@ -21,12 +21,12 @@ Summary steps:
 ## Prerequisites
 
 Prerequisites, you will need to have [Node.js](https://nodejs.org) installed in your
-computer. If you want to follow this guide you will need to take as starting point 
+computer. If you want to follow this guide you will need to take as starting point
 sample [01 Styles / 03 SASS](https://github.com/Lemoncode/webpack-1.x-by-sample/tree/master/01%20Styles/03%20SASS).
 
 ## steps
 
-- Let's start by making some cleanup in our *index.html*, we are going to remove 
+- Let's start by making some cleanup in our *index.html*, we are going to remove
 the Bootstrap's *jumbotron* component and add a `<div>` with a given "id".
 
 ```html
@@ -46,7 +46,7 @@ the Bootstrap's *jumbotron* component and add a `<div>` with a given "id".
 and
 [logo_2.png](https://github.com/Lemoncode/webpack-1.x-by-sample/blob/master/01%20Styles/04%20Handling%20Images/content/logo_2.png).
 
-- Let's jump into *students.js* and import *logo_1.png* using JavaScript. 
+- Let's jump into *students.js* and import *logo_1.png* using JavaScript.
 Let's place it under a given `<div>`:
 
 ```javascript
@@ -58,9 +58,9 @@ img.src = logoImg;
 document.getElementById('imgContainer').appendChild(img);
 ```
 
-- We have already installed *url-loader* plugin, so we only need to configure the 
-extension png/jpeg in the *webpack.config.js* loaders section. One thing to note down, 
-we are adding an additional parameter to the url-loader called **limit**. By using this 
+- We have already installed *url-loader* plugin, so we only need to configure the
+extension png/jpeg in the *webpack.config.js* loaders section. One thing to note down is that
+we are adding an additional parameter to the url-loader called **limit**. By using this
 parameter we are telling the loader to encode the image if its size is less than
 5KB approx and embed it directly in the HTML file.
 
@@ -78,7 +78,7 @@ loaders: [
 ![Demo01_04_app1.png](../../99 Readme Resources/02 Webpack/Demo01_04_app1.png "Demo01_04_app1.png")
 
 
-- That's fine but what if we had already the image referenced inside a HTML 
+- That's fine but what if we had already the image referenced inside a HTML
 `<img>` tag? Let's add *logo_2.png* into the *index.html* file:
 
 ```html
