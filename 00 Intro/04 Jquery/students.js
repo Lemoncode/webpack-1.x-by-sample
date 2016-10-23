@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 import {getAvg} from "./averageService";
 
 $('body').css('background-color', 'blue');

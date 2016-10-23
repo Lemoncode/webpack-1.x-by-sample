@@ -50,7 +50,7 @@ npm install html-webpack-plugin --save-dev
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>    
+    <title>Webpack 1.x by sample</title>   
   </head>
   <body>
     Hello webpack !

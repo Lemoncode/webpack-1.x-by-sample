@@ -89,7 +89,7 @@ Finalmente en el archivo index.html generado (en la carpeta dist) podemos compro
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>    
+    <title>Webpack 1.x by sample</title>
   </head>
   <body>
     Hello webpack !
