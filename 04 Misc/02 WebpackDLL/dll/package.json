@@ -9,10 +9,11 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {    
+  "dependencies": {
     "lodash": "^4.15.0"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^4.0.0",
     "webpack": "^1.13.2"
   }
 }
