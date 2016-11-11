@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 import * as mystyles from "./mystyles.css";
 import {getAvg} from './averageService';
 

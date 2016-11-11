@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 import {getAvg} from "./averageService";
 
 const scores = [90, 75, 60, 99, 94, 30];

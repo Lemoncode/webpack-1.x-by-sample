@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 import * as bootstrap from './node_modules/bootstrap/dist/css/bootstrap.css';
 import * as mystyles from './mystyles.scss';
 import {getAvg} from './averageService';
