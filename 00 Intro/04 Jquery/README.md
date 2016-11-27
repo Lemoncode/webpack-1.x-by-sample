@@ -18,11 +18,11 @@ Summary steps:
 
 ## Prerequisites
 
-Prerequisites, you will need to have nodejs installed in your computer. If you want to follow this guide you will need to take as starting point sample "03 Output".
+You will need to have nodejs installed in your computer. If you want to follow this guide you will need to take as starting point sample "03 Output".
 
 ## steps
 
-- Let's start by downloading the jquery library via npm, in this case we will execute the following command from the command prompt ```npm install jquery --save```, note down: this time we are not adding the *-dev* suffix to the parameter, this time the jquery package is a dependency from the web app not  from the build process.
+- Let's start by downloading the jquery library via npm. In this case we will execute the following command from the command prompt ```npm install jquery --save```, *note down*: this time we are not adding the ``*-dev*`` suffix to the parameter, this time the jquery package is a dependency of the web app not of the build process.
 
 ````
 npm install jquery --save
@@ -30,15 +30,15 @@ npm install jquery --save
 
 ![package.json](../../99 Readme Resources/02 Webpack/Demo04PackageJsonJQuery.png "Demo04PackageJsonJQuery.png")
 
-- Since this is a legacy library it expects to have a global variable available,
-instead of assigning this manually let's define it in the webpack.config.js. file,
+- Since this is a legacy library it expects to have a global variable available.
+Instead of assigning this manually let's define it in the `webpack.config.js`. file,
 first we will require an import "webpack" at the top of the file:
 
 ````
 var webpack = require("webpack");
 ````
 
-- Then we will use a plugin from webpack to define as global variables: jQuery and $.
+- Then we will use a plugin from webpack to define jQuery and $ as global variables.
 
 ````
 plugins:[
@@ -50,7 +50,7 @@ plugins:[
   new HtmlWebpackPlugin({
 ````
 
-- Now it's ready to use, just to test it, let's change the background color of the page body to blue. Let's change the background of the body element using jquery:
+- Now it's ready to use. Just to test it, let's change the background color of the page body to blue. Let's change the background of the body element using jquery:
 
 ````
 import {getAvg} from './averageService';
@@ -62,8 +62,8 @@ $('body').css('background-color', 'blue');
 
 ![Demo04BlueBackground](../../99 Readme Resources/02 Webpack/Demo04BlueBackground.png "Demo04BlueBackground.png")
 
-- To finish with this demo, let's face the following case: we want to split the bundle into two, a main one (application level) and a second one that will hold all the third party library, in order to do that we can use the CommonChunkPlugin
-(already included in webpack), in this plugin we specify the libraries that are going to be placed in the separate library js under the 'vendor' category. First let's start by adding a new entry point called 'vendor', and there we define an array including all the libraries that we want to include under that bundle (note down, entry is not an array any more, it's an object).
+- To finish with this demo, let's face the following case: we want to split the bundle into two, a main one (application level) and a second one that will hold all the third party libraries. To do that we can use the `CommonChunkPlugin`
+(already included in webpack). In this plugin we specify the libraries that are going to be placed in the separate library js under the 'vendor' category. First let's start by adding a new entry point called 'vendor', and there we define an array including all the libraries that we want to include under that bundle (note down, entry is not an array any more, it's an object).
 
 ````
 module.exports = {
@@ -93,7 +93,7 @@ Finally in the generated index.html (under dist) we can check that both scripts 
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>    
+    <title>Webpack 1.x by sample</title>
   </head>
   <body>
     Hello webpack !

@@ -22,7 +22,7 @@ module.exports = {
 				test: /\.css$/,
 				exclude: /node_modules/,
 				loader: "style-loader!css-loader"
-			},			
+			},
 			{
 				test: /\.js$/,
         loader: "babel-loader",
@@ -46,4 +46,4 @@ module.exports = {
 			hash: true
     })
   ]
-}
+};

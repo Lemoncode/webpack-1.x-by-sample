@@ -7,7 +7,7 @@ We will start from sample 02 Server,
 
 Summary steps:
  - Redirect output (bundle.js) to "dist" folder.
- - Include into the build proccess: copying the index.html file to "dist" folder
+ - Include into the build proccess: copying the index.html file to "dist" folder.
  - Let webpack include the bundle.js script into the index.html file.
  - Add map support in order to enable ES6 files to be debugged directly on the browser.
  - Generate a minified version of the bundle.js.
@@ -21,8 +21,7 @@ Prerequisites, you will need to have nodejs installed in your computer. If you w
 
 ## steps
 
-- It's not a good idea to mix source code with generated one (bundle), ideally this generated code should be placed under a separate folder (let's name it dist), in order to
-setup this we have to indicate webpack the output folder, first we will required "path" package on top of our webpack.config.js file, just to have some helpers to manipulate paths, and we will create a member variable that will hold the basePath (current path where webpack.config is being placed):
+- It's not a good idea to mix source code with generated one (bundle), ideally this generated code should be placed under a separate folder (let's name it dist). In order to setup this we have to indicate webpack the output folder. First we will require the "path" package on top of our `webpack.config.js` file just to get some helpers to manipulate paths. We will also create a member variable that will hold the basePath (current path where webpack.config is being placed):
 
 ````
 var path = require("path");
@@ -30,7 +29,7 @@ var path = require("path");
 var basePath = __dirname;
 ````
 
-- Then under the output section we will add a new parameter called path, we will add a new parameter indicating that the ouput path will be current path + "/dist". Now we can execute webpack and check that the bundle output is generated under the dist folder.
+- Then under the output section we will add a new parameter called path and we will add a new parameter indicating that the ouput path will be current path + "/dist". Now we can execute `webpack` and check that the bundle output is generated under the dist folder.
 
 ````
 output: {
@@ -39,7 +38,7 @@ output: {
   },
 ````
 
-- We have the js file under the dist folder, wouldn't it be nice to include the index.html into that folder, and what's more it would be great if we don't need to manually inject the script tag pointing to the bundle.js file, and letting webpack doing to that for us (including a hash param to avoid browser caching when new versions are being deployed). In order to do that we are going to introduce the concept of [webpack plugin](https://webpack.github.io/docs/plugins.html): plugins allows us to inject custom build steps. Meanwhile loaders (e.g. babel-loader) acts file by file (files that matches the given extension e.g. js, or ts...), plugins act globally and are executed once. We are going to install a plugin called [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin), from the command prompt, type:
+- We have the js file under the dist folder, wouldn't it be nice to include the index.html into that folder? And what's more wouldn't be great if didn't need to manually inject the script tag pointing to the bundle.js file, and let webpack do that for us? (including a hash param to avoid browser caching when new versions are being deployed). In order to do that we are going to introduce the concept of [webpack plugin](https://webpack.github.io/docs/plugins.html): plugins allows us to inject custom build steps. Meanwhile loaders (e.g. babel-loader) act file by file (files that match the given extension e.g. js, or ts...), plugins act globally and are executed once. We are going to install a plugin called [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin). In the command prompt, type:
 
 ````
 npm install html-webpack-plugin --save-dev
@@ -52,7 +51,7 @@ npm install html-webpack-plugin --save-dev
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>    
+    <title>Webpack 1.x by sample</title>
   </head>
   <body>
     Hello webpack !
@@ -61,15 +60,14 @@ npm install html-webpack-plugin --save-dev
 ````
 
 - This plugin (html-webpack-plugin) will take as template input our index.html, and we will
-point an output destination (index.html under dist folder). The plugin will copy index.html into destination and inject the script tag including a hash tag to avoid browser caching when new versions are being deployed. Once we have installed it, we need to require it on top of
-our webpack.config.js file:
+point an output destination (index.html under dist folder). The plugin will copy index.html into destination and inject the script tag including a hash tag to avoid browser caching when new versions are being deployed. Once we have installed it, we need to require it on top of our webpack.config.js file:
 
 ````
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 ````
 
-- In order to configure it we have to add the following update
-on our webpack.config.js (right after modules definition)
+- In order to configure it we have to add the following section
+on our webpack.config.js (right after modules definition).
 
 ````
 plugins:[
@@ -83,8 +81,7 @@ plugins:[
 
 
 - Now if we run webpack we will realize that index.html is copied under the dist folder
-and the script tag is automatically being generated, there is only one caveat... we are not getting any additional hash param to avoid browser caching, we can do that by setting the option
-hash to true:
+and the script tag is automatically being generated. There is only one caveat... we are not getting any additional hash param to avoid browser caching, we can do that by setting the option hash to true:
 
 ````
 plugins:[
@@ -100,7 +97,7 @@ plugins:[
 ![html hash](../../99 Readme Resources/02 Webpack/Demo03_htmlHash.png "Demo03_htmlHash.png")
 
 
-- This looks quite well but... we are developers, what would happen if we attempt to debug from the browser our web app? By default we only will be able to debug bundle.js (big file already trasnpiled to es5), if we need to pinpoint issues and debug step by step this is far from ideal. Is there a way to let the browser link our original files and let us debug directly on es6 mode? The answer is yes, we only need to add a line of code to our webpack.config cofiguration, right after output closing bracket, we can include this line:
+- This looks quite well but... we are developers. What would happen if we attempt to debug from the browser our web app? By default we only will be able to debug bundle.js (big file already trasnpiled to es5), if we need to pinpoint issues and debug step by step this is far from ideal. Is there a way to let the browser link our original files and let us debug directly on es6 mode? The answer is yes, we only need to add a line of code to our `webpack.config` cofiguration, right after `output` closing curly bracket, we can include this line:
 
 ````
 devtool: 'source-map',

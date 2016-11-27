@@ -18,7 +18,7 @@ module.exports = {
 
 	module: {
 		loaders: [
-			{			  
+			{
 			  test: /\.html$/,
 			  loader: 'html-loader'
 			},
@@ -77,4 +77,4 @@ module.exports = {
 			hash: true
     })
   ]
-}
+};

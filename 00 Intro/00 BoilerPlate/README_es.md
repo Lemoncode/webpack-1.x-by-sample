@@ -80,7 +80,7 @@ module.exports = {
   output: {
     filename: "bundle.js"
   }
-}
+};
 ```
 
 - Ahora añadimos soporte para ES6, pediremos a webpack el manejo de todos los archivos js en el directorio del proyecto (excluyendo la subcarpeta `node_modules`) y traduciremos desde ES6 a ES5 (usando `babel-loader`).
@@ -104,7 +104,7 @@ module.exports = {
       }
     ]
   }
-}
+};
 ```
 
 - Vamos a arrancar webpack desde la línea de comandos, escribiendo `npm start` y presionando enter.
@@ -140,7 +140,7 @@ npm start
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Webpack 1.x by sample</title>
     <script src="bundle.js"></script>
   </head>
   <body>

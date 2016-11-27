@@ -1,8 +1,8 @@
 # Modules Sample
 
-In this file we are going to enter into "dev mode", working with files service
+In this file we are going to enter into "dev mode". Working with files service
 is not ideal when you are developing a web application, we will learn how to launch
-a lite web server, how deploy our bundle into a dist folder (including index.html),
+a _lite_ web server, how deploy our bundle into a dist folder (including index.html),
 how to debug our es6 code directly into the browser debugger and minify
 our bundle.js.
 

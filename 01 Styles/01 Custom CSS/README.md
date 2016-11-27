@@ -41,7 +41,7 @@ used on some e.g. div. (we will name it mystyles.css)
 </body>
 ```
 
-- Let's start installing style-loader and css-loader as dev dependencies
+- Let's start installing `style-loader` and `css-loader` as dev dependencies
 
 
 ````
@@ -53,15 +53,15 @@ npm install style-loader --save-dev
 npm install css-loader --save-dev
 ````
 
-- Let's import this style from our main javascript file, we have to add the following line of code into the students.js file:
+- Let's import this style from our main javascript file, we have to add the following line of code into the `students.js` file:
 
 ````javascript
 import * as styles from "./mystyles.css";
 ````
 - If we launch a webpack build this will throw errors, that's because we haven't
-defined any loader to handle the css extension, let's configure webpack
-properly, let's add to the loader section a css entry and execute first
-the css-loader extension (handle css files), then the style-loader (add CSS to the down by injecting a styler class)
+defined any loader to handle the css extension. To configure webpack
+properly let's add to the loader section a css entry and execute first
+the css-loader extension (handle css files), then the style-loader (add CSS to the down by injecting a styler class).
 
 ````javascript
 module: {
@@ -84,7 +84,7 @@ module: {
 ````
 
 - Now we can just execute the app (npm start) and check how the red background is
-being display on the div we have chosen.
+being displayed on the div we have chosen.
 
 ![Demo01_00_CSS.png](../../99 Readme Resources/02 Webpack/Demo01_00_CSS.png "Demo01_00_CSS.png")
 
@@ -95,5 +95,5 @@ open the main HTML file, we can check how this have been included as a style.
 ![Demo01_01_Network.png](../../99 Readme Resources/02 Webpack/Demo01_01_Network.png "Demo01_01_Network.png")
 
 
-- In next demos we will learn how to ask webpack to separate our styles from bundle.js 
-into separate css output file, depending on your scenario you could choose one way or the other.
+- In next demos we will learn how to ask webpack to separate our styles from bundle.js
+into separate css output file. Depending on your scenario you could choose one way or the other.
